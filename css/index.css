@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #f4efec;
+    --color-text: #cdc6c3;
+    --content-gap: calc(var(--index) * 10);
+}
+
+@font-face {
+    font-family: raleway-c;
+    src: url(../assets/fonts/raleway-regular.woff2);
+}
+
+@font-face {
+    font-family: outfit-c;
+    src: url(../assets/fonts/outfit-regular.woff2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: outfit-c;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: gold;
+}
+
+.content, .hero, .main-header, .contentt > * {
+    will-change: transform;
+}  
+
+body {
+    background-image: url(../assets/background/bg.jpg);
+    background-size: 50px;
+    color: #fafafa;
+    font-family: raleway-c;
+    overflow-x: hidden;
+}
+
+.hero {
+    width: calc(var(--index) * 40);
+    position: absolute;
+    left: 36vw;
+    top: 20vh;
+    z-index: -1;
+}
+
+.main-header {
+    height: 100vh;
+}
+
+.container {
+    padding: 0 7vw;
+}
+
+.main-title {
+    font-size: calc(var(--index) * 8);
+    position: absolute;
+    width: min-content;
+    top: 30vh;
+    line-height: .9;
+}
+
+.second-title {
+    font-size: calc(var(--index) * 2);
+    position: absolute;
+    width: max-content  ;
+    right: 66vw;
+    top: 75vh;
+}
+
+.contentt {
+    display: flex;
+	padding: calc(var(--index) * 45) 0;
+}
+
+/* Разделяем контент на левую и правую стороны. Свойство "> *" позволяет присвоить стили только для первого потомка  */
+.contentt > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content__item {
+    max-width: calc(var(--index) * 20);
+    margin-bottom: var(--content-gap);
+    max-height: 180vh;
+    border-radius: 8px;
+}
+
+.content__left {
+    margin-top: calc(var(--content-gap) * 1.75);
+}
+
+.content__right .content__item {
+    margin: 0;
+    margin-top: var(--content-gap);
+}
+
+.text-block {
+    color: var(--color-text);
+    position: relative;
+}
+
+.text-block__h {
+    font-size: 26px;
+    line-height: 2rem;
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+}
